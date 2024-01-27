@@ -327,3 +327,120 @@ void coloanaRasturnat(int a[10][10], int l, int c, int v[]) {
 	}
 }
 
+int cifControl(int nr) {
+
+
+	while (nr > 9)
+	{
+		int s = 0;
+		while (nr > 0)
+		{
+			s += nr % 10;
+			nr /= 10;
+		}
+		nr = s;
+
+	}
+	return nr;
+}
+
+bool isPalindrom(int nr) {
+
+	if (oglindit(nr) == nr) {
+		return true;
+	}
+	return false;
+
+}
+
+int primulElemPalindrom(int a[10][10], int l, int c) {
+
+	for (int i = 0; i < l; i++) {
+		for (int j = 0; j < c; j++) {
+			if (isPalindrom(a[i][j]) == true && nrDivizori(a[i][j]) >= 3 && nrDivizori(a[i][j]) <= 5) {
+				return i;
+			}
+		}
+	}
+	return -1;
+}
+
+void dubluLinie(int a[10][10], int l, int c, int v[]) {
+
+	int poz = primulElemPalindrom(a, l, c);
+
+	for (int i = 0; i < l; i++) {
+		v[i] = a[poz][i] * 2;
+	}
+
+}
+
+void interschimbareLinii(int a[10][10], int l, int c) {
+
+	for (int i = 0; i < c; i++) {
+		int aux = a[0][i];
+		a[0][i] = a[c-1][i];
+		a[c-1][i] = aux;
+	}
+
+}
+
+void sortarePrimaLinie(int a[10][10], int l, int c) {
+
+	for (int i = 0; i < l - 1; i++) {
+		for (int j = i + 1; j < l; j++) {
+			if (a[0][i] > a[0][j]) {
+				int aux = a[0][i];
+				a[0][i] = a[0][j];
+				a[0][j] = aux;
+			}
+		}
+	}
+
+}
+
+int pozMin(int a[10][10], int l, int c) {
+
+	int min = INT_MAX;
+	int imin = 9;
+
+	for (int i = 0; i < l; i++) {
+		for (int j = 0; j < c; j++) {
+			if (a[i][j] < min) {
+				min = a[i][j];
+				imin = i;
+			}
+		}
+	}
+	return imin;
+}
+
+int pozMax(int a[10][10], int l, int c) {
+
+	int max = INT_MIN;
+	int imax = -1;
+
+	for (int i = 0; i < l; i++) {
+		for (int j = 0; j < c; j++) {
+			if (a[i][j] > max) {
+				max = a[i][j];
+				imax = i;
+			}
+		}
+	}
+	return imax;
+}
+
+void interschimbareMinMax(int a[10][10], int l, int c) {
+
+	int min = pozMin(a, l, c);
+	int max = pozMax(a, l, c);
+
+
+	for (int i = 0; i < c; i++) {
+		int aux = a[min][i];
+		a[min][i] = a[max][i];
+		a[max][i] = aux;
+	}
+
+}

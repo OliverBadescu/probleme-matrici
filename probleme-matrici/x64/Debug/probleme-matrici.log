@@ -2,11 +2,11 @@
 C:\mycode\initiere\probleme-matrici\probleme-matrici\tema.h(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   (compiling source file 'probleme-matrici.cpp')
   
-C:\mycode\initiere\probleme-matrici\probleme-matrici\probleme.h(127): warning C4715: 'poz3CifEgaleColoana': not all control paths return a value
 C:\mycode\initiere\probleme-matrici\probleme-matrici\probleme.h(115): warning C4715: 'poz3CifEgaleLinie': not all control paths return a value
+C:\mycode\initiere\probleme-matrici\probleme-matrici\probleme.h(127): warning C4715: 'poz3CifEgaleColoana': not all control paths return a value
 C:\mycode\initiere\probleme-matrici\probleme-matrici\probleme.h(163): warning C4715: 'DoileaNrPrimLinie': not all control paths return a value
 C:\mycode\initiere\probleme-matrici\probleme-matrici\probleme.h(180): warning C4715: 'DoileaNrPrimColoana': not all control paths return a value
-C:\mycode\initiere\probleme-matrici\probleme-matrici\probleme.h(268): warning C4715: 'coloanaFrecventaMax': not all control paths return a value
 C:\mycode\initiere\probleme-matrici\probleme-matrici\probleme.h(252): warning C4715: 'linieFrecventaMax': not all control paths return a value
+C:\mycode\initiere\probleme-matrici\probleme-matrici\probleme.h(268): warning C4715: 'coloanaFrecventaMax': not all control paths return a value
 C:\mycode\initiere\probleme-matrici\probleme-matrici\probleme.h(319): warning C4715: 'DoileaNrPerfectColoana': not all control paths return a value
   probleme-matrici.vcxproj -> C:\mycode\initiere\probleme-matrici\x64\Debug\probleme-matrici.exe
