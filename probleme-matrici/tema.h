@@ -148,10 +148,7 @@ void sol7() {
 }
 
 
-// l) Sa se insereze inainte de coloana pe care se afla cele mai multe elemente de maxim, cifra minima dintre toate elementele vectorului. ???
-
-
-// m)  Inserati dupa fiecare coloana ce este formata din elemente in care fiecare cifra (0-9) apare cel putin o data, cifra de control a fiecarei element ???
+// m)  Inserati dupa fiecare coloana ce este formata din elemente in care fiecare cifra (0-9) apare cel putin o data, cifra de control a fiecarei element 
 
 void sol8() {
 

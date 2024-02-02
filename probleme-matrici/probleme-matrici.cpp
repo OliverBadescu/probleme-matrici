@@ -1,8 +1,8 @@
-#include "tema.h"
+#include "tema2.h"
 
 
 int main()
 {
-	sol11();
+	testare7();
 
 }

@@ -130,8 +130,10 @@
     <ClCompile Include="probleme-matrici.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="corectarea-temei.h" />
     <ClInclude Include="probleme.h" />
     <ClInclude Include="tema.h" />
+    <ClInclude Include="tema2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

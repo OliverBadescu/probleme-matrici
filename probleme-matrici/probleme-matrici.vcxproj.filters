@@ -26,5 +26,11 @@
     <ClInclude Include="probleme.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="corectarea-temei.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tema2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

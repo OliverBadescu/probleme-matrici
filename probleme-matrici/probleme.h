@@ -267,18 +267,6 @@ int coloanaFrecventaMax(int a[10][10], int l, int c, int f[]) {
 
 }
 
-bool isSortatCresc(int a[10][10], int l, int c) {
-
-	for (int i = 0; i < l; i++) {
-		for (int j = 0; j < c -1; j++) {
-			if (a[i][j] > a[i][j + 1]) {
-				return false;
-			}
-		}
-	}
-	return true;
-}
-
 bool isPatratPerfect(int nr) {
 
 	if (nr == sqrt(nr) * sqrt(nr)) {
@@ -375,12 +363,12 @@ void dubluLinie(int a[10][10], int l, int c, int v[]) {
 
 }
 
-void interschimbareLinii(int a[10][10], int l, int c) {
+void interschimbareLinii(int a[10][10], int c, int v1, int v2) {
 
 	for (int i = 0; i < c; i++) {
-		int aux = a[0][i];
-		a[0][i] = a[c-1][i];
-		a[c-1][i] = aux;
+		int aux = a[v1][i];
+		a[v1][i] = a[v2][i];
+		a[v2][i] = aux;
 	}
 
 }
@@ -444,3 +432,107 @@ void interschimbareMinMax(int a[10][10], int l, int c) {
 	}
 
 }
+
+bool isSortatCresc(int a[10][10], int c, int poz) {
+
+	for (int i = 0; i < c - 1; i++) {
+		if (a[poz][i] > a[poz][i + 1]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool isSortatDescresc(int a[10][10], int c, int poz) {
+
+	for (int i = 0; i < c - 1; i++) {
+		if (a[poz][i] < a[poz][i + 1]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+void stergereLiniiSortate(int a[10][10], int &l, int c) {
+
+	for (int i = 0; i < l; i++) {
+		for (int j = 0; j < c; j++) {
+			if (!(isSortatCresc(a, c, i) || isSortatDescresc(a, c, i))) {
+				stergereLinie(a, l, c, i);
+			}
+		}
+	}
+
+}
+
+int linieMaxElemPare(int a[10][10], int l, int c) {
+
+	int ct = 0;
+	int max = 0;
+	int imax = 0;
+
+	for (int i = 0; i < l; i++) {
+		for (int j = 0; j < c; j++) {
+			if (a[i][j] % 2 == 0) {
+				ct++;
+			}
+		}
+		if (ct > max) {
+			max = ct;
+			imax = i;
+		}
+		ct = 0;
+	}
+	return imax;
+}
+
+void creareLinieDubla(int a[10][10], int l, int c, int v[]) {
+
+	int poz = linieMaxElemPare(a, l, c);
+
+	for (int i = 0; i < l; i++) {
+		v[i] = a[poz][i] * 2;
+	}
+
+}
+
+void sortarePrimaColoanaPrinInterschimbare(int a[10][10], int l, int c) {
+
+	bool sortat = false;
+
+	do {
+		sortat = true;
+
+		for (int i = 0; i < l - 1; i++) {
+			if (a[i][0] > a[i + 1][0]) {
+				interschimbareLinii(a, c, i, i + 1);
+				sortat = false;
+			}
+		}
+	} while (sortat == false);
+
+}
+
+void parcurgereTriunghiSus(int a[10][10], int l, int c) {
+
+	for (int i = 0; i < l; i++) {
+		for (int j = i + 1; j < c; j++) {
+			cout << a[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+}
+
+void parcurgereTriunghiJos(int a[10][10], int l, int c) {
+
+	for (int i = 0; i < l; i++) {
+		for (int j = 0; j < i; j++) {
+			cout << a[i][j] << " ";
+		}
+		cout << endl;
+	}
+
+}
+
+
